@@ -14,7 +14,8 @@ export class Negociacao {
     constructor(private _quantidade: number,
         private _valor: number,
         private _data: Date,
-        private _instrumento: string) {
+        private _instrumento: string,
+        private _naturezaOperacao: string) {
     }
 
     get quantidade(): number {
@@ -40,6 +41,10 @@ export class Negociacao {
     get data(): Date {
         const data = new Date(this._data.getTime());
         return data;
+    }
+
+    get naturezaOperacao(): string {
+        return this._naturezaOperacao;
     }
 
 }

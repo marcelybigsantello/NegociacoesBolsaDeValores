@@ -9,6 +9,7 @@ export class NegociacoesView extends View {
                     <th>QUANTIDADE</th>
                     <th>VALOR</th>
                     <th>INSTRUMENTO</th>
+                    <th>OPERACAO</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,6 +20,7 @@ export class NegociacoesView extends View {
                             <td>${negociacao.quantidade}</td>
                             <td>${negociacao.valor}</td>
                             <td>${negociacao.instrumento}</td>
+                            <td>${negociacao.naturezaOperacao}</td>
                         </tr>
                     
                     `;

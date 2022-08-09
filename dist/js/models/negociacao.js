@@ -10,11 +10,12 @@ export class Negociacao {
         this._data = data;
         this._instrumento = instrumento;
     } */
-    constructor(_quantidade, _valor, _data, _instrumento) {
+    constructor(_quantidade, _valor, _data, _instrumento, _naturezaOperacao) {
         this._quantidade = _quantidade;
         this._valor = _valor;
         this._data = _data;
         this._instrumento = _instrumento;
+        this._naturezaOperacao = _naturezaOperacao;
     }
     get quantidade() {
         return this._quantidade;
@@ -34,5 +35,8 @@ export class Negociacao {
     get data() {
         const data = new Date(this._data.getTime());
         return data;
+    }
+    get naturezaOperacao() {
+        return this._naturezaOperacao;
     }
 }
