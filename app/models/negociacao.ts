@@ -47,4 +47,15 @@ export class Negociacao {
         return this._naturezaOperacao;
     }
 
+    public static criaNegociacao(quantidadeStr: string, valorStr: string, dataStr: string,
+        instrumentoStr: string, naturezaOperacaoStr: string){
+        const exp = /-/g;
+        const date = new Date(dataStr.replace(exp, ','));
+        const quantidade = parseInt(quantidadeStr);
+        const valor = parseFloat(valorStr);
+        const instrumento = instrumentoStr;
+        const naturezaOperacao = naturezaOperacaoStr;
+        return new Negociacao(quantidade, valor, date, instrumento, naturezaOperacao);
+    }
+
 }
