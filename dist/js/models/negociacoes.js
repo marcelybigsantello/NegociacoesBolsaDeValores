@@ -2,8 +2,6 @@ export class Negociacoes {
     constructor() {
         this.negociacoes = [];
     }
-    //Forma mais verbosa: 
-    //private negociacoes: Array<Negociacao> = [];
     adiciona(negociacao) {
         this.negociacoes.push(negociacao);
     }

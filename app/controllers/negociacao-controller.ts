@@ -16,11 +16,11 @@ export class NegociacaoController {
     private negociacoes: Negociacoes = new Negociacoes();
 
     constructor() {
-        this.inputData = document.querySelector("#data");
-        this.inputQuantidade = document.querySelector("#quantidade");
-        this.inputValor = document.querySelector("#valor");
-        this.inputInstrumento = document.querySelector("#instrumento");
-        this.inputNaturezaOperacao = document.querySelector("#naturezaOperacao");
+        this.inputData = <HTMLInputElement>document.querySelector("#data") ;
+        this.inputQuantidade = <HTMLInputElement>document.querySelector("#quantidade");
+        this.inputValor = document.querySelector("#valor") as HTMLInputElement;
+        this.inputInstrumento = document.querySelector("#instrumento") as HTMLInputElement;
+        this.inputNaturezaOperacao = document.querySelector("#naturezaOperacao") as HTMLInputElement;
         this.negociacoesView.update(this.negociacoes);
     }
 

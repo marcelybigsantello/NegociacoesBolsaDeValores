@@ -11,5 +11,10 @@ export class MensagemView extends View {
                 <p class="alert alert-danger">${model}</p>
             `;
         }
+        else {
+            return `
+                <p class="alert alert-warning">${model}</p>
+            `;
+        }
     }
 }
