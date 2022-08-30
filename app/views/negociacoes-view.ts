@@ -1,6 +1,5 @@
 import { escape } from "../decorators/escape.js";
-import { Negociacao } from "../models/negociacao.js";
-import { Negociacoes } from "../models/negociacoes";
+import { Negociacoes } from "../models/negociacoes.js";
 import { View } from "./view.js";
 
 export class NegociacoesView extends View<Negociacoes> {
@@ -16,6 +15,7 @@ export class NegociacoesView extends View<Negociacoes> {
                     <th>VALOR</th>
                     <th>INSTRUMENTO</th>
                     <th>OPERACAO</th>
+                    <th>VOLUME</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,6 +27,7 @@ export class NegociacoesView extends View<Negociacoes> {
                             <td>${negociacao.valor}</td>
                             <td>${negociacao.instrumento}</td>
                             <td>${negociacao.naturezaOperacao}</td>
+                            <td>${negociacao.valor * negociacao.quantidade}</td>
                         </tr>
                     
                     `;

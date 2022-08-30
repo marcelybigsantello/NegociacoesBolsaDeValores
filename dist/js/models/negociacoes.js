@@ -8,6 +8,14 @@ export class Negociacoes {
     listar() {
         return this.negociacoes;
     }
+    converterEmTexto() {
+        return `
+            Negociacoes: ${this.negociacoes}
+        `;
+    }
+    ehIgual(objeto) {
+        return JSON.stringify(this.negociacoes) === JSON.stringify(objeto);
+    }
 }
 const lista = [];
 lista.push(10);

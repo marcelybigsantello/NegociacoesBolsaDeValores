@@ -1,9 +1,11 @@
-export class Negociacao {
+import { Modelo } from "../interfaces/modelo.js";
+
+export class Negociacao implements Modelo<Negociacao> {
     /* private _quantidade: number;
     private _valor: number;
     private _data: Date;
     private _instrumento: string;
-
+    
     constructor(quantidade: number, valor: number, data: Date, instrumento: string){
         this._quantidade = quantidade;
         this._valor = valor;
@@ -18,6 +20,7 @@ export class Negociacao {
         private _naturezaOperacao: string) {
     }
 
+
     get quantidade(): number {
         return this._quantidade;
     }
@@ -26,7 +29,7 @@ export class Negociacao {
         return this._valor;
     }
 
-   /*  get data(): Date {
+    /*  get data(): Date {
         return this._data;
     } */
 
@@ -48,7 +51,7 @@ export class Negociacao {
     }
 
     public static criaNegociacao(quantidadeStr: string, valorStr: string, dataStr: string,
-        instrumentoStr: string, naturezaOperacaoStr: string){
+        instrumentoStr: string, naturezaOperacaoStr: string) {
         const exp = /-/g;
         const date = new Date(dataStr.replace(exp, ','));
         const quantidade = parseInt(quantidadeStr);
@@ -56,6 +59,25 @@ export class Negociacao {
         const instrumento = instrumentoStr;
         const naturezaOperacao = naturezaOperacaoStr;
         return new Negociacao(quantidade, valor, date, instrumento, naturezaOperacao);
+    }
+
+    public converterEmTexto(): string {
+        return `
+            Quantidade: ${this.quantidade}, 
+            Valor: ${this.valor},
+            Data: ${this.data},
+            Instrumento: ${this.instrumento},
+            Natureza da Operacao: ${this.naturezaOperacao}
+        `;
+    }
+
+
+    public ehIgual(negociacao: Negociacao): boolean {
+        return this.data.getDate() === negociacao.data.getDate()
+        && this.data.getMonth() === negociacao.data.getMonth()
+        && this.data.getFullYear() === negociacao.data.getFullYear()
+        && this.instrumento === negociacao.instrumento
+        && this.quantidade === negociacao.quantidade;
     }
 
 }

@@ -1,5 +1,4 @@
 import { NegociacaoController } from "./controllers/negociacao-controller.js";
-import { NegociacoesView } from "./views/negociacoes-view.js";
 
 const controller = new NegociacaoController();
 const form = document.querySelector('.form');
@@ -11,7 +10,17 @@ if (form){
     });
 }
 else {
-    throw new Error('Não foi possível carregar a aplicação. Verifique se o form foi instanciado')
+    throw new Error('Não foi possível carregar a aplicação. Verifique se o form foi instanciado');
+}
+
+const botaoImportar = document.querySelector("#btnImportar");
+if (botaoImportar){
+    botaoImportar.addEventListener('click', () => {
+        controller.importarDados();
+    })
+}
+else {
+    throw new Error('Botão importar não foi encontrado');
 }
 
 

@@ -17,11 +17,8 @@ export class View {
         }
     }
     update(model) {
-        const t1 = performance.now();
         let template = this.template(model);
         this.element.innerHTML = template;
-        const t2 = performance.now();
-        console.log("Tempo de execucao de update: ", (t2 - t1) / 1000, " segundos");
     }
 }
 __decorate([

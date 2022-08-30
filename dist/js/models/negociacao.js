@@ -34,4 +34,20 @@ export class Negociacao {
         const naturezaOperacao = naturezaOperacaoStr;
         return new Negociacao(quantidade, valor, date, instrumento, naturezaOperacao);
     }
+    converterEmTexto() {
+        return `
+            Quantidade: ${this.quantidade}, 
+            Valor: ${this.valor},
+            Data: ${this.data},
+            Instrumento: ${this.instrumento},
+            Natureza da Operacao: ${this.naturezaOperacao}
+        `;
+    }
+    ehIgual(negociacao) {
+        return this.data.getDate() === negociacao.data.getDate()
+            && this.data.getMonth() === negociacao.data.getMonth()
+            && this.data.getFullYear() === negociacao.data.getFullYear()
+            && this.instrumento === negociacao.instrumento
+            && this.quantidade === negociacao.quantidade;
+    }
 }

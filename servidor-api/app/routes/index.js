@@ -2,8 +2,9 @@
 
 var api = require('../api');
 
-module.exports  = function(app) {
+module.exports = function(app) {
         
-    app.route('/dados')
-        .get(api.dados);          
+    app.route('/dados').get(api.dados);
+        
+    app.route('/instrumentos').get(api.instrumentos);
 };

@@ -33,17 +33,18 @@
 
         <div class="form-group">
             <label for="instrumento">Instrumento: </label>
-            <input id="instrumento" type="text" class="form-control" id="instrumento" required autofocus />
+            <input type="text" id="instrumento" name="instrumento" class="form-control">
         </div>
 
         <div class="form-group">
             <label for="naturezaOperacao">Natureza da Operação: </label>
-            <select name="naturezaOperacao" id="naturezaOperacao">
+            <select name="naturezaOperacao" id="naturezaOperacao" class="form-control">
                 <option value="Compra">Compra</option>
                 <option value="Venda">Venda</option>
             </select>
         </div>
-        <button class="btn btn-primary" type="submit">Incluir</button>
+        <button id="btnIncluir" class="btn btn-primary" type="submit">Incluir</button>
+        <button id="btnImportar" class="btn btn-secondary" name="btnImportar">Importar</button>
     </form>
     <br>
     <div id="negociacoesView">
